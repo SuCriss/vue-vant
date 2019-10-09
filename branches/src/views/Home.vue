@@ -13,7 +13,6 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import {apiAddress} from "../reuqest/api";
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
@@ -42,23 +41,11 @@ export default {
             'actionsAddCount':'actionsAddCount',
             'actionsDisCount':'actionsDisCount'
         }),
-        // ...mapMutations({ //方法映射到对应函数
-        //     'actionsAddCount':'addCount',
-        //     'actionsDisCount':'disCount'
-        // }),
       load(){
-          apiAddress().then(res=>{
+          this.$api.article.articleList({}).then(res=>{
               console.log(res)
           })
       },
-        // add(n){
-        //   this.$store.dispatch('actionsAddCount',n)
-        //     // this.count = this.$store.state.count
-        // },
-        // dis(n){
-        //   this.$store.dispatch('actionsDisCount',n)
-        //     // this.count = this.$store.state.count
-        // }
     }
 }
 </script>

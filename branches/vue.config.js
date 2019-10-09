@@ -9,11 +9,11 @@ module.exports = {
 
         proxy: {
             "/api": {
-                target: "https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86/music",   // 要请求的后台地址
+                target: "https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86",   // 要请求的后台地址
                 ws: false,    // 启用websockets
                 changeOrigin: true,    // 是否跨域
                 pathRewrite: {
-                    "^/api": "/"          // 这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替
+                    "^/api": ""          // 这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替
                 }
             },
         }

@@ -3,17 +3,17 @@ import QS from 'qs'
 import store from '../store'
 import router from '../router'
 import { Toast } from 'vant'
-
+var meta = require('../../package')
 axios.defaults.baseURL ='';
 axios.defaults.timeout=10000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-const env = process.env.NODE_ENV;
+const env = meta.config.env || process.env.NODE_ENV;
 console.log(process.env);
 if(env == 'development'){ //开发环境用本地mock或者线上的mock模拟数据仓库
     // axios.defaults.baseURL='https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86';
     axios.defaults.baseURL='';
 }else if(env == 'debug'){
-    axios.defaults.baseURL='https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86/music';
+    axios.defaults.baseURL='';
 }else if(env == 'production'){
     axios.defaults.baseURL='http://www.production.com'
 }

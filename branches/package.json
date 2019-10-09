@@ -2,6 +2,16 @@
   "name": "vue_demo",
   "version": "0.1.0",
   "private": true,
+  "config":{
+    "env":"debug",
+    "Server":{
+      "defaultProtocol":"http",
+      "serverIp":"127.0.0.1",
+      "serverPort":"8080",
+      "timeOut":30
+    }
+
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

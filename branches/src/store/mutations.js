@@ -1,9 +1,10 @@
+import * as types from './mutation-type';
 const mutations = {
-    addCount(state,n=1){
+    [types.MUTATAION_TYPES.ADD_count](state,n=1){
         state.isDisabled=false;
         return (state.count+=n)
     },
-    disCount(state,n=1){
+    [types.MUTATAION_TYPES.DIS_count](state,n=1){
         return (state.count -=n,state.count==0?state.isDisabled=true:state.isDisabled=false)
 
     }

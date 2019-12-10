@@ -10,8 +10,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 const env = meta.config.env || process.env.NODE_ENV;
 console.log(process.env);
 if(env == 'development'){ //开发环境用本地mock或者线上的mock模拟数据仓库
-    // axios.defaults.baseURL='https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86';
-    axios.defaults.baseURL='';
+    axios.defaults.baseURL='https://www.easy-mock.com/mock/5b7a8280bf95d870586e7a86';
+    // axios.defaults.baseURL='';
 }else if(env == 'debug'){
     axios.defaults.baseURL='';
 }else if(env == 'production'){
